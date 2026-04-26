@@ -1,0 +1,22 @@
+<svg width="128" height="128" viewBox="0 0 128 128" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="blueGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#2D6CFF" />
+      <stop offset="100%" stop-color="#67C2FF" />
+    </linearGradient>
+    <linearGradient id="redGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FF4F86" />
+      <stop offset="100%" stop-color="#FF9B5E" />
+    </linearGradient>
+    <linearGradient id="toothGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FFFFFF" />
+      <stop offset="100%" stop-color="#E6F4FF" />
+    </linearGradient>
+  </defs>
+  <rect width="128" height="128" rx="32" fill="#FFFFFF" />
+  <path d="M14 34C24 20 44 16 61 24C68 28 68 38 62 44C55 51 44 65 44 79C44 92 50 102 63 108C75 102 82 92 82 79C82 69 76 60 70 54C64 48 66 34 74 28C84 20 104 16 114 34C108 30 100 30 97 40C95 48 96 62 96 76C96 98 86 108 70 118C58 124 44 123 30 118C14 112 4 98 4 76C4 62 5 48 3 40C0 30 -8 30 4 34Z" fill="url(#blueGrad)" opacity="0.95" />
+  <path d="M114 34C104 20 84 16 67 24C60 28 60 38 66 44C73 51 84 65 84 79C84 92 78 102 65 108C53 102 46 92 46 79C46 69 52 60 58 54C64 48 62 34 54 28C44 20 24 16 14 34C20 30 28 30 31 40C33 48 32 62 32 76C32 98 42 108 58 118C70 124 84 123 98 118C114 112 124 98 124 76C124 62 123 48 125 40C128 30 136 30 124 34Z" fill="url(#redGrad)" opacity="0.95" />
+  <path d="M64 20C45 20 30 36 30 56C30 78 42 106 64 110C86 106 98 78 98 56C98 36 83 20 64 20Z" fill="url(#toothGrad)" stroke="#A1C7FF" stroke-width="2" />
+  <path d="M52 58C52 58 60 84 64 84C68 84 76 58 76 58" stroke="#74B7FF" stroke-width="5" stroke-linecap="round" />
+  <path d="M64 34C58 34 52 38 52 44C52 50 58 54 64 54C70 54 76 50 76 44C76 38 70 34 64 34Z" fill="#D9EEFF" />
+</svg>
