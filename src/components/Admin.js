@@ -78,40 +78,6 @@ const Admin = () => {
   const [selectedAppointmentId, setSelectedAppointmentId] = useState(null);
   const [notesText, setNotesText] = useState('');
 
-  // Doctor availability configuration
-  const doctorAvailability = {
-    sameer: {
-      branches: ['Adirampattinam', 'Pattukottai'],
-      schedule: [
-        {
-          days: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Saturday'],
-          branches: ['Adirampattinam', 'Pattukottai'],
-          intervals: [{ start: '09:30', end: '13:00' }],
-        },
-        {
-          days: ['Friday', 'Sunday'],
-          branches: ['Adirampattinam'],
-          intervals: [{ start: '09:30', end: '13:00' }],
-        },
-        {
-          days: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Saturday'],
-          branches: ['Adirampattinam'],
-          intervals: [{ start: '17:00', end: '20:15' }],
-        },
-      ],
-    },
-    fahmitha: {
-      branches: ['Adirampattinam'],
-      schedule: [
-        {
-          days: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'],
-          branches: ['Adirampattinam'],
-          intervals: [{ start: '10:00', end: '13:00' }],
-        },
-      ],
-    },
-  };
-
   // Appointment form states
   const [showAppointmentForm, setShowAppointmentForm] = useState(false);
   const [appointmentFormData, setAppointmentFormData] = useState({

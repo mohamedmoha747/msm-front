@@ -1,5 +1,4 @@
-﻿import React, { useRef, useState, useEffect } from "react";
-import { motion } from "framer-motion";
+import React, { useRef, useState, useEffect } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 
 const AwardsAndCertifications = () => {
