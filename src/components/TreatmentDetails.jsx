@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { Link, useParams } from 'react-router-dom';
+import { Link, useParams, useLocation } from 'react-router-dom';
 
 const treatments = {
   'teeth-whitening': {
@@ -366,7 +366,15 @@ const treatments = {
 
 const TreatmentDetails = () => {
   const { name } = useParams();
-  const treatment = treatments[name?.toLowerCase()];
+  const location = useLocation();
+  const passedTreatment = location.state?.treatment;
+  
+  // Use passed treatment data if available, otherwise look up in treatments object
+  let treatment = passedTreatment;
+  
+  if (!treatment) {
+    treatment = treatments[name?.toLowerCase()];
+  }
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -395,17 +403,17 @@ const TreatmentDetails = () => {
     <section className="bg-accent-50 dark:bg-slate-950 text-slate-900 dark:text-slate-100">
       <div className="relative h-72 md:h-[28rem] overflow-hidden">
         <img
-          src={treatment.banner}
-          alt={treatment.title}
+          src={treatment.image || treatment.banner}
+          alt={treatment.title || treatment.name}
           className="absolute inset-0 h-full w-full object-cover brightness-90"
         />
         <div className="absolute inset-0 bg-slate-950/40"></div>
         <div className="absolute inset-0 flex items-center justify-center px-4">
           <div className="text-center max-w-3xl">
             <p className="text-lg uppercase tracking-[0.3em] text-white mb-3">Treatment Details</p>
-            <h1 className="text-3xl sm:text-4xl md:text-5xl font-semibold text-white">{treatment.title}</h1>
+            <h1 className="text-3xl sm:text-4xl md:text-5xl font-semibold text-white">{treatment.title || treatment.name}</h1>
             <p className="mt-4 text-base sm:text-lg text-slate-100 leading-7">
-              {treatment.shortDescription}
+              {treatment.shortDescription || treatment.description}
             </p>
           </div>
         </div>
@@ -430,36 +438,40 @@ const TreatmentDetails = () => {
             <div className="rounded-3xl bg-white dark:bg-slate-900 p-8 shadow-lg">
               <h3 className="text-2xl font-semibold mb-4">Overview</h3>
               <p className="leading-8 text-slate-600 dark:text-slate-300">
-                {treatment.longDescription}
+                {treatment.longDescription || treatment.description}
               </p>
             </div>
 
-            <div className="rounded-3xl bg-white dark:bg-slate-900 p-8 shadow-lg">
-              <h3 className="text-2xl font-semibold mb-4">Procedure</h3>
-              <ol className="space-y-4 list-decimal list-inside text-slate-600 dark:text-slate-300">
-                {treatment.procedure.map((step, index) => (
-                  <li key={index} className="leading-7">
-                    {step}
-                  </li>
-                ))}
-              </ol>
-            </div>
+            {treatment.procedure && (
+              <div className="rounded-3xl bg-white dark:bg-slate-900 p-8 shadow-lg">
+                <h3 className="text-2xl font-semibold mb-4">Procedure</h3>
+                <ol className="space-y-4 list-decimal list-inside text-slate-600 dark:text-slate-300">
+                  {treatment.procedure.map((step, index) => (
+                    <li key={index} className="leading-7">
+                      {step}
+                    </li>
+                  ))}
+                </ol>
+              </div>
+            )}
           </div>
 
           <div className="space-y-8">
-            <div className="rounded-3xl bg-white dark:bg-slate-900 p-8 shadow-lg">
-              <h3 className="text-2xl font-semibold mb-4">Benefits</h3>
-              <ul className="space-y-4 text-slate-600 dark:text-slate-300">
-                {treatment.benefits.map((benefit, index) => (
-                  <li key={index} className="flex items-start gap-3 leading-7">
-                    <span className="mt-1 inline-flex h-7 w-7 items-center justify-center rounded-full bg-primary-100 text-primary-600 dark:bg-primary-900 dark:text-primary-200 text-sm font-semibold">
-                      ✓
-                    </span>
-                    <span>{benefit}</span>
-                  </li>
-                ))}
-              </ul>
-            </div>
+            {treatment.benefits && (
+              <div className="rounded-3xl bg-white dark:bg-slate-900 p-8 shadow-lg">
+                <h3 className="text-2xl font-semibold mb-4">Benefits</h3>
+                <ul className="space-y-4 text-slate-600 dark:text-slate-300">
+                  {treatment.benefits.map((benefit, index) => (
+                    <li key={index} className="flex items-start gap-3 leading-7">
+                      <span className="mt-1 inline-flex h-7 w-7 items-center justify-center rounded-full bg-primary-100 text-primary-600 dark:bg-primary-900 dark:text-primary-200 text-sm font-semibold">
+                        ✓
+                      </span>
+                      <span>{benefit}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            )}
 
             <div className="rounded-3xl bg-white dark:bg-slate-900 p-8 shadow-lg">
               <h3 className="text-2xl font-semibold mb-4">Next steps</h3>

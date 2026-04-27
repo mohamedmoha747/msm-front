@@ -7,20 +7,20 @@ const Treatment = () => {
     {
       category: 'Dental Services',
       treatments: [
-        { name: 'General Dentistry', image: process.env.PUBLIC_URL + '/images/general-dentistry.png', description: 'Routine care and preventive treatments for optimal oral health' },
-        { name: 'Root Canal Treatment', image: process.env.PUBLIC_URL + '/images/root-canal-treatment.png', description: 'Relief from tooth pain and infection' },
-        { name: 'Crown and Bridges', image: process.env.PUBLIC_URL + '/images/crown-bridges.png', description: 'Restore damaged teeth and fill gaps with natural-looking solutions' },
-        { name: 'Dental Implants', image: process.env.PUBLIC_URL + '/images/dental-implants.png', description: 'Permanent tooth replacement with a stable foundation' },
-        { name: 'Orthodontic Braces', image: process.env.PUBLIC_URL + '/images/orthodontic-braces.png', description: 'Align teeth and correct bite issues' },
-        { name: 'Aligners', image: process.env.PUBLIC_URL + '/images/aligners.png', description: 'Discrete and comfortable teeth straightening solution' },
+        { name: 'General Dentistry', image: process.env.PUBLIC_URL + '/images/General-dentistry.jpeg', description: 'Routine care and preventive treatments for optimal oral health' },
+        { name: 'Root Canal Treatment', image: process.env.PUBLIC_URL + '/images/ROOT-CANEL.jpeg', description: 'Relief from tooth pain and infection' },
+        { name: 'Crown and Bridges', image: process.env.PUBLIC_URL + '/images/crown-bridges.jpeg', description: 'Restore damaged teeth and fill gaps with natural-looking solutions' },
+        { name: 'Dental Implants', image: process.env.PUBLIC_URL + '/images/Dental-implants.jpeg', description: 'Permanent tooth replacement with a stable foundation' },
+        { name: 'Orthodontic Braces', image: process.env.PUBLIC_URL + '/images/Orthodontic.jpeg', description: 'Align teeth and correct bite issues' },
+        { name: 'Aligners', image: process.env.PUBLIC_URL + '/images/Aligners.jpeg', description: 'Discrete and comfortable teeth straightening solution' },
       ]
     },
     {
       category: 'Maxillofacial Surgeries',
       treatments: [
-        { name: 'Facial Bone Fractures', image: process.env.PUBLIC_URL + '/images/facial-bone-fractures.png', description: 'Expert surgical repair of jaw and facial bone injuries' },
-        { name: 'Orthognathic Surgeries', image: process.env.PUBLIC_URL + '/images/orthognathic-surgeries.png', description: 'Corrective jaw surgery for proper alignment and function' },
-        { name: 'Oral and Facial Cyst & Tumors', image: process.env.PUBLIC_URL + '/images/cyst-tumors.png', description: 'Safe removal of oral cysts and facial tumors' },
+        { name: 'Facial Bone Fractures', image: process.env.PUBLIC_URL + '/images/Facial-Bone.jpeg', description: 'Expert surgical repair of jaw and facial bone injuries' },
+        { name: 'Orthognathic Surgeries', image: process.env.PUBLIC_URL + '/images/orthognathic.png', description: 'Corrective jaw surgery for proper alignment and function' },
+        { name: 'Oral and Facial Cyst & Tumors', image: process.env.PUBLIC_URL + '/images/cyst-tumors.jpeg', description: 'Safe removal of oral cysts and facial tumors' },
       ]
     }
   ];
@@ -147,6 +147,7 @@ const Treatment = () => {
                       {/* Read More Button */}
                       <Link
                         to={`/treatment/${slugify(treatment.name)}`}
+                        state={{ treatment }}
                         className="mt-5 inline-flex items-center justify-center rounded-full bg-primary-500 px-5 py-3 text-sm font-medium text-white transition hover:bg-primary-600 shadow-md hover:shadow-lg"
                       >
                         Read More
