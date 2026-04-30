@@ -58,7 +58,7 @@ function AppContent() {
             <Route path="/treatment/:name" element={<TreatmentDetails />} />
             <Route path="/doctors" element={<Doctors />} />
             <Route path="/contact" element={<Contact />} />
-            <Route path="/admin" element={<Admin />} />
+            <Route path="/admin/*" element={<Admin />} />
           </Routes>
         </main>
         <Footer />

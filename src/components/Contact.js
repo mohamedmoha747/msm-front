@@ -8,18 +8,16 @@ const Contact = () => {
       address: 'No. 95, S.R.V Complex, Nadimuthu Nagar, Pattukkottai',
       phone: '+91 843 843 6757',
       email: 'pattukkottai@msmdental.com',
-      hours: 'Mon-Sat: 9.30AM-1.00PM',
-      icon: '📍',
-      mapLink: 'https://maps.app.goo.gl/mH9dGibMesatvwnq8?g_st=ac'
+      hours: 'Mon-Sat: 9AM-6PM',
+      icon: '📍'
     },
     {
       name: 'Adirampattinam Branch',
       address: 'No. 25B/70, Old Post Office Road, Adirampattinam',
       phone: '+91 900 333 2337',
       email: 'adirampattinam@msmdental.com',
-      hours: 'Mon-Sat: 5.00PM-8.15PM',
-      icon: '🏥',
-      mapLink: 'https://maps.app.goo.gl/Pk9r6CrcnZPnvnYu5'
+      hours: 'Mon-Sat: 9AM-6PM',
+      icon: '🏥'
     },
   ];
 
@@ -106,58 +104,9 @@ const Contact = () => {
                     {branch.hours}
                   </p>
                 </div>
-                <div className="pt-3 mt-3 border-t border-gray-200 dark:border-slate-700">
-                  <a 
-                    href={branch.mapLink} 
-                    target="_blank" 
-                    rel="noopener noreferrer"
-                    className="inline-flex items-center justify-center rounded-full bg-primary-500 px-4 py-2 text-sm font-medium text-white transition hover:bg-primary-600 shadow-md hover:shadow-lg"
-                  >
-                    📍 View on Google Maps
-                  </a>
-                </div>
               </div>
             </motion.div>
           ))}
-        </motion.div>
-
-        {/* Maps */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12"
-        >
-          <div className="rounded-xl overflow-hidden shadow-md bg-white dark:bg-slate-800">
-            <div className="px-6 py-4 border-b border-gray-200 dark:border-slate-700">
-              <h3 className="text-lg font-semibold text-gray-900 dark:text-white">Pattukkottai Branch Map</h3>
-              <p className="text-sm text-gray-600 dark:text-gray-400 mt-1">No. 95, S.R.V Complex, Nadimuthu Nagar, Pattukkottai</p>
-            </div>
-            <iframe
-              title="Pattukkottai Branch Map"
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3913.8577893436857!2d79.3207549!3d10.417573299999999!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3b0001005b66152d%3A0x26be275f096bc726!2sMSM%20Dental%20Clinic%2C%20Pattukkottai!5e0!3m2!1sen!2sin!4v1234567890123"
-              width="100%"
-              height="220"
-              className="border-0"
-              loading="lazy"
-              referrerPolicy="no-referrer-when-downgrade"
-            />
-          </div>
-          <div className="rounded-xl overflow-hidden shadow-md bg-white dark:bg-slate-800">
-            <div className="px-6 py-4 border-b border-gray-200 dark:border-slate-700">
-              <h3 className="text-lg font-semibold text-gray-900 dark:text-white">Adirampattinam Branch Map</h3>
-              <p className="text-sm text-gray-600 dark:text-gray-400 mt-1">No. 25B/70, Old Post Office Road, Adirampattinam</p>
-            </div>
-            <iframe
-              title="Adirampattinam Branch Map"
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3913.8577893436857!2d79.3794!3d10.3319!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3afffde036a1b53b%3A0x631f51395bbced89!2sMSM%20Dental%20Clinic%2C%20Thilagar%20Street%2C%20Adirampattinam!5e0!3m2!1sen!2sin!4v1234567890123"
-              width="100%"
-              height="220"
-              className="border-0"
-              loading="lazy"
-              referrerPolicy="no-referrer-when-downgrade"
-            />
-          </div>
         </motion.div>
 
         {/* Main Contact Info */}
@@ -189,9 +138,7 @@ const Contact = () => {
               <p className="text-blue-600 dark:text-blue-400 font-bold text-2xl mb-2">🕐</p>
               <p className="text-gray-600 dark:text-gray-400">Working Hours</p>
               <p className="text-gray-900 dark:text-white font-semibold">
-                MON-SUN 9.30AM-1.00PM AND 5.00PM-8.15PM
-
-                
+                Mon-Sat 9AM-6PM
               </p>
             </div>
           </div>
